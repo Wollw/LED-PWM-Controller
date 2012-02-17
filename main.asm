@@ -1,4 +1,3 @@
-;;
 ;;	Multicolor LED Controller
 ;;
 ;;	This is firmware for an attiny4/5/9/10 for causing a multicolor LED
@@ -6,17 +5,10 @@
 ;;	and PB1 to the other.  PB0 is used as a PWM output which is controlled
 ;;	by the state of PB2.  When PB2 goes low the LED's color attached to
 ;;	PB0 fades out.  When PB2 goes high again the color fades back in.
-;;
+
 .NOLIST
-.INCLUDE "include/defs.inc"
+.INCLUDE "defs.inc"
 .LIST
-
-.DEF	TEMP0	=	r16
-.DEF	TEMP1	=	r17
-.DEF	OCRVAL	=	r18
-
-.EQU	PWM_MIN	=	0x02
-.EQU	PWM_MAX	=	0xfe
 
 .ORG	0x0000
 	rjmp	RESET
@@ -25,14 +17,8 @@
 .ORG	0x0040
 
 RESET:
-	;; Setup the stack
-	;;ldi		TEMP0,	high(RAMEND)
-	;;out		SPH,	TEMP0
-	;;ldi		TEMP0,	low(RAMEND)
-	;;out		SPL,	TEMP0
-
 	;; Clock prescaler of 256 to save power (?)
-	ldi		TEMP0,	0xd8
+	ldi		TEMP0,	0xD8
 	ldi		TEMP1,	0b1000
 	out		CCP,	TEMP0
 	out		CLKPSR,	TEMP1
@@ -92,18 +78,16 @@ TIM0_OVF_EXIT:
 	sei
 	reti
 
-;; Increment if we aren't at PWM_MAX already
+;; Increment the reference if we aren't at PWM_MAX already
 INC_OCRVAL:
 	cpi		OCRVAL,	PWM_MAX
-	brsh	INC_OCRVAL_EXIT
+	brsh	TIM0_OVF_EXIT
 	inc		OCRVAL
-INC_OCRVAL_EXIT:
 	rjmp	TIM0_OVF_EXIT
 
-;; Decrement if we aren't at PWM_MIN already
+;; Decrement the reference if we aren't at PWM_MIN already
 DEC_OCRVAL:
 	cpi		OCRVAL,	PWM_MIN
-	brlo	DEC_OCRVAL_EXIT
+	brlo	TIM0_OVF_EXIT
 	dec		OCRVAL
-DEC_OCRVAL_EXIT:
 	rjmp	TIM0_OVF_EXIT
