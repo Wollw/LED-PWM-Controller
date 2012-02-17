@@ -2,4 +2,3 @@ avrdude.conf
 *.eep.hex
 *.obj
 *.cof
-include/tn10def.inc
