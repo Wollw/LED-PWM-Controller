@@ -10,6 +10,9 @@
 .INCLUDE "defs.inc"
 .LIST
 
+.EQU    PWM_MIN	=	0x02
+.EQU    PWM_MAX	=	0xf0
+
 .ORG    0x0000
     rjmp    RESET
 .ORG    0x0004
