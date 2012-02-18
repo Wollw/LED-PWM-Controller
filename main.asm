@@ -52,7 +52,9 @@ RESET:
     ldi     TEMP0,      PWM_MIN
     out     OCR0AH,     TEMP1
     out     OCR0AL,     TEMP0
-    ldi     OCRVAL,     PWM_MIN
+    ldi     OCRVAL,     0x40
+
+    ;; Disable the ADC to save power
 
     sei
     rjmp    LOOP
@@ -68,12 +70,12 @@ LOOP:
 ;; try to decrement.
 TIM0_OVF:
     cli
-    ldi     TEMP1,      0x00
+    ldi     TEMP0,      0x00
     sbic    PINB,       2
     rjmp    INC_OCRVAL
     rjmp    DEC_OCRVAL
 TIM0_OVF_EXIT:
-    out     OCR0AH,    TEMP1
+    out     OCR0AH,    TEMP0
     out     OCR0AL,    OCRVAL
     sei
     reti

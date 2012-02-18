@@ -5,11 +5,13 @@
 .DEF    TEMP1	=	r17
 .DEF    OCRVAL	=	r18
 .EQU    PWM_MIN	=	0x02
-.EQU    PWM_MAX	=	0xfe
+.EQU    PWM_MAX	=	0xf0
 	
 ;;	MCU Definitions
+.equ	SMCR	=	0x3a
 .equ    CCP		=	0x3c
 .equ    CLKPSR	=	0x36
+.equ	PRR		=	0x35
 
 .equ    TCCR0A	=	0x2e
 .equ    TCCR0B	=	0x2d

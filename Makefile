@@ -10,7 +10,7 @@ AVRDUDE_WRITE_FLASH = -U flash:w:$(TARGET).hex
 
 all: build
 	
-install: build
+install:
 	$(AVRDUDE) $(AVRDUDE_FLAGS) -p $(MCU) $(AVRDUDE_WRITE_FLASH)
 
 build:
