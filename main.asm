@@ -54,8 +54,6 @@ RESET:
     out     OCR0AL,     TEMP0
     ldi     OCRVAL,     0x40
 
-    ;; Disable the ADC to save power
-
     sei
     rjmp    LOOP
 
