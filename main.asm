@@ -24,8 +24,9 @@ RESET:
     out     CLKPSR,     TEMP1
 
     ;; PB2 is our input used to check if we should
-    ;; fade the PWM color in or out
-    ldi     TEMP0,      0b0100
+    ;; fade the PWM color in or out so we enable the pullup
+    ;; we also enable the pullup on PB3 so potentially save power
+    ldi     TEMP0,      0b1100
     out     PUEB,       TEMP0
 
     ;; PB0 and PB1 are outputs for the LED
