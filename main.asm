@@ -54,11 +54,20 @@ RESET:
     out     OCR0AL,     TEMP0
     ldi     OCRVAL,     0x40
 
+    ;; Disable ADC to save power
+    ldi     TEMP0,      0b10
+    out     PRR,        TEMP0
+
     sei
     rjmp    LOOP
 
-;; Loop forever
+;; Loop forever and sleep a lot
 LOOP:
+    ldi     TEMP0,      0b1
+    out     SMCR,       TEMP0
+    sleep
+    ldi     TEMP0,      0b0
+    out     SMCR,       TEMP0
     rjmp    LOOP
 
 
