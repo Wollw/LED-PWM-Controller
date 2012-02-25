@@ -1,0 +1,14 @@
+(1)	56 Ohm resistor (1206 package)
+	Part # CRG1206F56R
+
+(2)	27 Ohm resistors (1206 package)
+	Part # CR1206-FX-27R0ELF
+
+(1)	ATTiny4, 5, 9, or 10 (SOT-23 package)
+	Part # ATTINY4-TSHR
+		or ATTINY5-TSHR
+		or ATTINY9-TSHR
+		or ATTINY10-TSHR
+
+(1)	7.6mm x 7.6mm Bivar RGB LED
+	Part # R50RGB-F-0160
