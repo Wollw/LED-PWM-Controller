@@ -1,0 +1,65 @@
+# EESchema Netlist Version 1.1 created  Tue 28 Feb 2012 07:54:27 PM PST
+(
+ ( /4F4D9CFC SIL-4 D1 RGB_LED
+  ( 1 /GREEN )
+  ( 2 GND )
+  ( 3 /BLUE )
+  ( 4 /RED )
+ )
+ ( /4F4D9D49 SIL-2 P1 CONN_2
+  ( 1 N-000007 )
+  ( 2 N-000007 )
+ )
+ ( /4F4D9D53 SIL-4 P2 CONN_4
+  ( 1 /PB0 )
+  ( 2 /PB1 )
+  ( 3 /PB2 )
+  ( 4 /PB3 )
+ )
+ ( /4F4D9D46 SIL-2 P3 CONN_2
+  ( 1 N-000008 )
+  ( 2 N-000008 )
+ )
+ ( /4F4D9B96 SM1206 R1 R
+  ( 1 /PB0 )
+  ( 2 /RED )
+ )
+ ( /4F4D9BA0 SM1206 R2 R
+  ( 1 /GREEN )
+  ( 2 /PB1 )
+ )
+ ( /4F4D9B9A SM1206 R3 R
+  ( 1 /BLUE )
+  ( 2 /PB2 )
+ )
+ ( /4F4D9B91 SOT23_6 U1 ATTINY4
+  ( 1 /PB0 )
+  ( 2 N-000007 )
+  ( 3 /PB1 )
+  ( 4 /PB2 )
+  ( 5 N-000008 )
+  ( 6 /PB3 )
+ )
+)
+*
+{ Allowed footprints by component:
+$component R1
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component R2
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component R3
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$endfootprintlist
+}
