@@ -5,7 +5,7 @@ TARGET = main
 AVRA = avra
 
 AVRDUDE = avrdude
-AVRDUDE_FLAGS = -C ./avrdude.conf -c dasaftdi -P /dev/ttyUSB0
+AVRDUDE_FLAGS = -p $(MCU) -c avrisp2 -P usb
 AVRDUDE_WRITE_FLASH = -U flash:w:$(TARGET).hex
 
 all: build
