@@ -1,24 +1,26 @@
-# EESchema Netlist Version 1.1 created  Tue 28 Feb 2012 07:54:27 PM PST
+# EESchema Netlist Version 1.1 created  Sun 01 Apr 2012 11:16:42 AM PDT
 (
- ( /4F4D9CFC SIL-4 D1 RGB_LED
+ ( /4F4D9CFC SIL-4 D1 LED
   ( 1 /GREEN )
   ( 2 GND )
   ( 3 /BLUE )
   ( 4 /RED )
  )
- ( /4F4D9D49 SIL-2 P1 CONN_2
-  ( 1 N-000007 )
-  ( 2 N-000007 )
+ ( /4F789AEC SIL-3 K1 GND
+  ( 1 GND )
+  ( 2 GND )
+  ( 3 GND )
  )
- ( /4F4D9D53 SIL-4 P2 CONN_4
+ ( /4F789ADE SIL-3 K2 VCC
+  ( 1 /VCC )
+  ( 2 /VCC )
+  ( 3 /VCC )
+ )
+ ( /4F4D9D53 SIL-4 P2 IO
   ( 1 /PB0 )
   ( 2 /PB1 )
   ( 3 /PB2 )
   ( 4 /PB3 )
- )
- ( /4F4D9D46 SIL-2 P3 CONN_2
-  ( 1 N-000008 )
-  ( 2 N-000008 )
  )
  ( /4F4D9B96 SM1206 R1 R
   ( 1 /PB0 )
@@ -32,12 +34,12 @@
   ( 1 /BLUE )
   ( 2 /PB2 )
  )
- ( /4F4D9B91 SOT23_6 U1 ATTINY4
+ ( /4F4D9B91 SOT23_6 U1 MCU
   ( 1 /PB0 )
-  ( 2 N-000007 )
+  ( 2 GND )
   ( 3 /PB1 )
   ( 4 /PB2 )
-  ( 5 N-000008 )
+  ( 5 /VCC )
   ( 6 /PB3 )
  )
 )
